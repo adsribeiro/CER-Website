@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,16 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Configuração do Design System -->
     <script>
         tailwind.config = {
@@ -48,12 +51,24 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #EAEAE5; }
-        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #EAEAE5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
 
         .text-balance {
             text-wrap: balance;
@@ -136,14 +151,38 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* MARQUEE */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
         /* Subtle Noise Texture Overlay */
         .noise {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.03; pointer-events: none; z-index: 9999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
     </style>
 </head>
+
 <body class="selection:bg-stone-800 selection:text-white">
 
     <div class="noise"></div>
@@ -151,7 +190,7 @@
     <!-- Scroll Container for Parallax ScrollTrigger -->
     <!-- Ajustado para h-[150vh] para garantir pista suficiente para os frames não "pularem" por pixel -->
     <div id="scroll-container" class="relative w-full h-[150vh]">
-        
+
         <!-- Sticky Wrapper -->
         <!-- O container principal que prende a "Hero Section" na tela enquanto rolamos o scroll-container -->
         <div class="sticky top-0 w-full h-screen overflow-hidden bg-black">
@@ -163,71 +202,84 @@
 
             <!-- Gradientes para realçar contraste de forma sutil e unificar com o fundo -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/90 md:from-black/70 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-stone-900 border-b border-stone-800"></div>
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-stone-900 border-b border-stone-800">
+            </div>
 
             <!-- Navbar Minimalista -->
-            <nav class="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 bg-transparent">
+            <nav
+                class="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 bg-transparent">
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-white text-stone-900 flex items-center justify-center rounded-sm transition-transform hover:scale-105 duration-300">
+                    <div
+                        class="w-10 h-10 bg-white text-stone-900 flex items-center justify-center rounded-sm transition-transform hover:scale-105 duration-300">
                         <i class="ph-bold ph-strategy text-xl"></i>
                     </div>
                     <span class="font-display font-medium tracking-tight text-xl text-white">
                         CER<span class="text-stone-400">.</span>
                     </span>
                 </div>
-                
+
                 <!-- Links ao Centro -->
-                <div class="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-widest text-stone-400">
-                    <a href="#" class="hover:text-white transition-colors">Consultoria</a>
-                    <a href="#" class="hover:text-white transition-colors">Tecnologia</a>
-                    <a href="#" class="hover:text-white transition-colors">Insights</a>
-                    <a href="#" class="hover:text-white transition-colors">Sobre</a>
+                <div
+                    class="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-widest text-stone-400">
+                    <a href="#ecossistema" class="hover:text-white transition-colors">Ecossistema</a>
+                    <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
+                    <a href="#contato" class="hover:text-white transition-colors">Contato</a>
                 </div>
-                
+
                 <!-- CTA Destaque -->
-                <button class="bg-white text-stone-900 px-6 py-2.5 rounded-sm text-xs font-mono uppercase tracking-widest hover:bg-stone-200 hover:-translate-y-0.5 transition-all shadow-md flex items-center gap-2 group">
-                    Fale Conosco
-                    <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </nav>
 
             <!-- Hero Main Structure -->
-            <main class="relative z-10 grid grid-cols-1 md:grid-cols-12 max-w-[1440px] mx-auto h-full px-6 md:px-12 pt-24 pb-12 items-center">
-                
+            <main
+                class="relative z-10 grid grid-cols-1 md:grid-cols-12 max-w-[1440px] mx-auto h-full px-6 md:px-12 pt-24 pb-12 items-center">
+
                 <!-- Left Column: Typography -->
                 <div class="col-span-12 md:col-span-7 flex flex-col justify-center">
-                    
+
                     <div class="inline-flex items-center gap-2 mb-8 gsap-stagger">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.7)]"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Soluções Next-Gen</span>
+                        <span
+                            class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.7)]"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Soluções
+                            Next-Gen</span>
                     </div>
 
                     <!-- Impactful Lettering (H1) -->
-                    <h1 class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-8 text-white gsap-stagger text-balance">
+                    <h1
+                        class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-8 text-white gsap-stagger text-balance">
                         Eleve a sua <br>
                         <span class="text-stone-400">Inteligência</span> <br>
                         de Negócios
                     </h1>
-                    
+
                     <!-- Short Description -->
-                    <p class="text-lg md:text-xl font-sans font-light text-stone-300 max-w-xl mb-12 leading-relaxed gsap-stagger">
-                        Unimos consultoria estratégica com tecnologia de ponta para arquitetar crescimento escalável, excelência operacional e transformação digital duradoura.
+                    <p
+                        class="text-lg md:text-xl font-sans font-light text-stone-300 max-w-xl mb-12 leading-relaxed gsap-stagger">
+                        Unimos consultoria estratégica com tecnologia de ponta para arquitetar crescimento escalável,
+                        excelência operacional e transformação digital duradoura.
                     </p>
-                    
+
                     <!-- Buttons Container -->
                     <div class="flex flex-wrap items-center gap-4 gsap-stagger">
                         <!-- Primary Solid CTA -->
-                        <button class="group relative px-8 py-4 bg-white text-stone-900 overflow-hidden rounded-sm transition-all hover:shadow-xl hover:-translate-y-1">
-                            <div class="absolute inset-0 w-full h-full bg-stone-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                            <span class="relative z-10 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                        <button
+                            class="group relative px-8 py-4 bg-white text-stone-900 overflow-hidden rounded-sm transition-all hover:shadow-xl hover:-translate-y-1">
+                            <div
+                                class="absolute inset-0 w-full h-full bg-stone-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            </div>
+                            <span
+                                class="relative z-10 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
                                 Iniciar Consultoria
-                                <i class="ph ph-arrow-right text-base group-hover:translate-x-1 transition-transform"></i>
+                                <i
+                                    class="ph ph-arrow-right text-base group-hover:translate-x-1 transition-transform"></i>
                             </span>
                         </button>
-                        
+
                         <!-- Secondary Ghost CTA -->
-                        <button class="px-8 py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 rounded-sm text-white font-mono text-xs uppercase tracking-widest transition-all hover:-translate-y-1 flex items-center gap-2 shadow-sm hover:shadow-md backdrop-blur-sm">
+                        <button
+                            class="px-8 py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 rounded-sm text-white font-mono text-xs uppercase tracking-widest transition-all hover:-translate-y-1 flex items-center gap-2 shadow-sm hover:shadow-md backdrop-blur-sm">
                             Ver Metodologia
                         </button>
                     </div>
@@ -236,43 +288,55 @@
                 <!-- Right Column: Glassmorphism Modular Card -->
                 <div class="col-span-12 md:col-span-5 flex items-center justify-end">
                     <!-- Updated glass-card for Dark Mode -->
-                    <div class="p-8 md:p-10 rounded-2xl w-full max-w-md group hover:-translate-y-2 transition-transform duration-500 gsap-stagger relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
-                        
+                    <div
+                        class="p-8 md:p-10 rounded-2xl w-full max-w-md group hover:-translate-y-2 transition-transform duration-500 gsap-stagger relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
+
                         <!-- Iluminação suave interna (Dark mode variant) -->
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
+                        <div
+                            class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none">
+                        </div>
 
                         <div class="flex justify-between items-start mb-10 relative z-10">
-                            <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-sm flex items-center justify-center text-white group-hover:rotate-12 transition-transform duration-300">
+                            <div
+                                class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-sm flex items-center justify-center text-white group-hover:rotate-12 transition-transform duration-300">
                                 <i class="ph ph-chart-line-up text-3xl"></i>
                             </div>
-                            <span class="px-3 py-1 bg-white/10 text-stone-200 rounded-full text-[10px] font-mono uppercase tracking-widest border border-white/20 shadow-sm backdrop-blur-md">
+                            <span
+                                class="px-3 py-1 bg-white/10 text-stone-200 rounded-full text-[10px] font-mono uppercase tracking-widest border border-white/20 shadow-sm backdrop-blur-md">
                                 Métricas ao Vivo
                             </span>
                         </div>
 
-                        <h3 class="font-display text-3xl font-medium tracking-tight text-white mb-2 relative z-10">Resultados e Performance</h3>
+                        <h3 class="font-display text-3xl font-medium tracking-tight text-white mb-2 relative z-10">
+                            Resultados e Performance</h3>
                         <p class="text-sm font-sans text-stone-300 leading-relaxed mb-10 relative z-10">
-                            Nossa arquitetura garante máxima eficiência e escalabilidade sistêmica em todas as unidades digitais.
+                            Nossa arquitetura garante máxima eficiência e escalabilidade sistêmica em todas as unidades
+                            digitais.
                         </p>
 
                         <!-- Dynamic Metrics Container -->
                         <div class="grid grid-cols-2 gap-4 relative z-10">
-                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md">
+                            <div
+                                class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md">
                                 <span class="block text-4xl font-bold font-display text-white mb-1">3.2x</span>
-                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Aumento de Receita</span>
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Aumento de
+                                    Receita</span>
                             </div>
-                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md delay-75">
+                            <div
+                                class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md delay-75">
                                 <span class="block text-4xl font-bold font-display text-white mb-1">99%</span>
-                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Disponibilidade</span>
+                                <span
+                                    class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Disponibilidade</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </main>
-            
+
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse opacity-70 z-20">
+            <div
+                class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse opacity-70 z-20">
                 <span class="text-[10px] font-mono uppercase tracking-widest text-stone-500">Role para Explorar</span>
                 <i class="ph ph-caret-down text-stone-500"></i>
             </div>
@@ -280,10 +344,13 @@
     </div>
 
     <!-- Segunda Dobra: Serviços e Propósitos -->
-    <section class="min-h-screen bg-[#111111] py-24 px-6 md:px-12 relative z-20 overflow-hidden border-t border-white/10 shadow-[-50px_0_100px_-20px_rgba(0,0,0,0.8)]">
+    <section id="ecossistema"
+        class="min-h-screen bg-[#111111] py-24 px-6 md:px-12 relative z-20 overflow-hidden border-t border-white/10 shadow-[-50px_0_100px_-20px_rgba(0,0,0,0.8)]">
         <!-- Textura sutil quadriculada (Grid) -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-        
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none">
+        </div>
+
         <div class="max-w-[1440px] mx-auto relative z-10">
             <!-- Header Section (Alinhado à esquerda como na referência) -->
             <div class="mb-20 max-w-3xl gsap-fade-up">
@@ -291,27 +358,35 @@
                     Ecossistema de Soluções
                 </h2>
                 <p class="text-stone-400 font-sans text-lg md:text-xl leading-relaxed">
-                    Nossa metodologia unifica o desenvolvimento humano, sólida visão de mercado e tecnologia de ponta para guiar sua empresa pelo percurso técnico até a excelência operacional.
+                    Nossa metodologia unifica o desenvolvimento humano, sólida visão de mercado e tecnologia de ponta
+                    para guiar sua empresa pelo percurso técnico até a excelência operacional.
                 </p>
             </div>
 
             <!-- Content Grid 2-cols -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
+
                 <!-- Coluna Esquerda: Graphic Card (Inspirado no "Neural Architecture" visual da imagem) -->
                 <div class="col-span-1 lg:col-span-6 w-full gsap-fade-up">
-                    <div class="flashlight-card-dark w-full aspect-square md:aspect-[4/3] bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] rounded-[2rem] border border-stone-800 relative overflow-hidden flex items-center justify-center shadow-2xl group" onmousemove="updateFlashlight(event, this)">
-                        
+                    <div class="flashlight-card-dark w-full aspect-square md:aspect-[4/3] bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] rounded-[2rem] border border-stone-800 relative overflow-hidden flex items-center justify-center shadow-2xl group"
+                        onmousemove="updateFlashlight(event, this)">
+
                         <!-- Linhas Radiais de Radar -->
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 transition-opacity duration-700 group-hover:opacity-40">
-                            <div class="w-[80%] h-[80%] rounded-full border border-dashed border-stone-500/30 animate-[spin_40s_linear_infinite]"></div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 transition-opacity duration-700 group-hover:opacity-40">
+                            <div
+                                class="w-[80%] h-[80%] rounded-full border border-dashed border-stone-500/30 animate-[spin_40s_linear_infinite]">
+                            </div>
                             <div class="absolute w-[60%] h-[60%] rounded-full border border-stone-600/20"></div>
-                            <div class="absolute w-[40%] h-[40%] rounded-full border border-dashed border-stone-400/30 animate-[spin_20s_linear_infinite_reverse]"></div>
+                            <div
+                                class="absolute w-[40%] h-[40%] rounded-full border border-dashed border-stone-400/30 animate-[spin_20s_linear_infinite_reverse]">
+                            </div>
                             <div class="absolute w-[20%] h-[20%] rounded-full border border-stone-700/50"></div>
                         </div>
 
                         <!-- Hub Central com Beam do Design System -->
-                        <div class="relative z-10 w-28 h-28 btn-beam-dark rounded-full shadow-[0_0_50px_rgba(255,255,255,0.05)] flex items-center justify-center transition-transform hover:scale-105 duration-500 cursor-pointer p-[2px]">
+                        <div
+                            class="relative z-10 w-28 h-28 btn-beam-dark rounded-full shadow-[0_0_50px_rgba(255,255,255,0.05)] flex items-center justify-center transition-transform hover:scale-105 duration-500 cursor-pointer p-[2px]">
                             <div class="btn-beam-content-dark bg-[#0a0a0a]">
                                 <div class="absolute inset-0 rounded-full bg-emerald-500/10 blur-xl"></div>
                                 <i class="ph ph-buildings text-4xl text-white relative z-10 animate-pulse"></i>
@@ -319,97 +394,481 @@
                         </div>
 
                         <!-- Conexão 1 (Empresarial) -->
-                        <div class="absolute top-[20%] left-[15%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
-                            <div class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
+                        <div
+                            class="absolute top-[20%] left-[15%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
                                 <i class="ph ph-briefcase text-2xl"></i>
                             </div>
                             <!-- Fio Conector visual usando clip path ou pseudo elements-->
-                            <svg class="absolute bottom-[-60px] right-[-60px] w-20 h-20 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500" preserveAspectRatio="none">
-                                <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4"/>
+                            <svg class="absolute bottom-[-60px] right-[-60px] w-20 h-20 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500"
+                                preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" stroke-width="1.5"
+                                    stroke-dasharray="4" />
                             </svg>
                         </div>
 
                         <!-- Conexão 2 (Tecnologia) -->
-                        <div class="absolute top-[30%] right-[10%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
-                            <div class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
+                        <div
+                            class="absolute top-[30%] right-[10%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
                                 <i class="ph ph-cpu text-2xl"></i>
                             </div>
-                            <svg class="absolute bottom-[-45px] left-[-70px] w-24 h-20 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500" preserveAspectRatio="none">
-                                <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4"/>
+                            <svg class="absolute bottom-[-45px] left-[-70px] w-24 h-20 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500"
+                                preserveAspectRatio="none">
+                                <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" stroke-width="1.5"
+                                    stroke-dasharray="4" />
                             </svg>
                         </div>
 
                         <!-- Conexão 3 (Pessoas/Propósito) -->
-                        <div class="absolute bottom-[20%] right-[20%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
-                            <div class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
+                        <div
+                            class="absolute bottom-[20%] right-[20%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-400 hover:bg-stone-800 transition-colors shadow-lg relative z-10">
                                 <i class="ph ph-users text-2xl"></i>
                             </div>
-                            <svg class="absolute top-[-50px] left-[-40px] w-16 h-16 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500" preserveAspectRatio="none">
-                                <line x1="100%" y1="100%" x2="0" y2="0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4"/>
+                            <svg class="absolute top-[-50px] left-[-40px] w-16 h-16 pointer-events-none opacity-30 group-hover:opacity-60 text-emerald-500/50 transition-opacity duration-500"
+                                preserveAspectRatio="none">
+                                <line x1="100%" y1="100%" x2="0" y2="0" stroke="currentColor" stroke-width="1.5"
+                                    stroke-dasharray="4" />
                             </svg>
                         </div>
 
 
                         <!-- Partícula flutuante (Estilo "Edge Computation" point) -->
-                        <div class="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.9)] top-[40%] left-[45%] animate-pulse"></div>
+                        <div
+                            class="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.9)] top-[40%] left-[45%] animate-pulse">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Coluna Direita: Lista de Serviços e Propósitos -->
                 <div class="col-span-1 lg:col-span-6 flex flex-col justify-center gap-12 pl-0 lg:pl-10">
-                    
+
                     <!-- Item 01 -->
                     <div class="flex gap-6 group gsap-fade-up">
-                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
                             01
                         </div>
                         <div>
-                            <h3 class="font-display text-2xl font-medium text-white mb-3 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Propósito Essencial</h3>
+                            <h3
+                                class="font-display text-2xl font-medium text-white mb-3 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
+                                Propósito Essencial</h3>
                             <div class="text-stone-400 font-sans text-[15px] leading-relaxed mb-4">
-                                Ajudarmos a evoluir <strong class="text-stone-200 font-normal">profissionais capacitados</strong> para contribuírem diretamente com o crescimento contínuo da empresa. Operamos em uma busca implacável pela <strong class="text-stone-200 font-normal">excelência operacional</strong> em tudo o que fazemos.
+                                Ajudarmos a evoluir <strong class="text-stone-200 font-normal">profissionais
+                                    capacitados</strong> para contribuírem diretamente com o crescimento contínuo da
+                                empresa. Operamos em uma busca implacável pela <strong
+                                    class="text-stone-200 font-normal">excelência operacional</strong> em tudo o que
+                                fazemos.
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 02 -->
-                    <div class="flex gap-6 group gsap-fade-up" style="transition-delay: 100ms">
-                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                    <div class="flex gap-6 group gsap-fade-up" data-delay="0.15">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
                             02
                         </div>
                         <div>
-                            <h3 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Consultoria Empresarial</h3>
+                            <h3
+                                class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
+                                Consultoria Empresarial</h3>
                             <!-- Tag Cloud baseada nos serviços. -->
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">VIABILIDADE DE MERCADO</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO FINANCEIRO & OP.</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TERCEIRIZAÇÃO DE DEPARTAMENTOS</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">RECRUTAMENTO E SELEÇÃO</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE QUALIDADE</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE PESSOAS</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO FINANCEIRA</span>
-                                <span class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">GESTÃO COMERCIAL (ACELERAÇÃO)</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">VIABILIDADE
+                                    DE MERCADO</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO
+                                    FINANCEIRO & OP.</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TERCEIRIZAÇÃO
+                                    DE DEPARTAMENTOS</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">RECRUTAMENTO
+                                    E SELEÇÃO</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
+                                    DE QUALIDADE</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
+                                    DE PESSOAS</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
+                                    FINANCEIRA</span>
+                                <span
+                                    class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">GESTÃO
+                                    COMERCIAL (ACELERAÇÃO)</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 03 -->
-                    <div class="flex gap-6 group gsap-fade-up" style="transition-delay: 200ms">
-                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                    <div class="flex gap-6 group gsap-fade-up" data-delay="0.3">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
                             03
                         </div>
                         <div>
-                            <h3 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Soluções em Tecnologia</h3>
+                            <h3
+                                class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
+                                Soluções em Tecnologia</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">B.I. E ANÁLISE DE DADOS</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">AUTOMAÇÃO DE PROCESSOS</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ARQUITETURA DE DADOS E ETL</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">SISTEMAS CUSTOMIZADOS</span>
-                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ATENDIMENTO, TREINAMENTO & SUPORTE</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">B.I.
+                                    E ANÁLISE DE DADOS</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">AUTOMAÇÃO
+                                    DE PROCESSOS</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ARQUITETURA
+                                    DE DADOS E ETL</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">SISTEMAS
+                                    CUSTOMIZADOS</span>
+                                <span
+                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ATENDIMENTO,
+                                    TREINAMENTO & SUPORTE</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Divider Estilo Ticker -->
+    <div class="border-y border-white/10 bg-black py-4 overflow-hidden relative z-20">
+        <div class="animate-marquee">
+            <div class="flex items-center">
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Mapeamento
+                    Financeiro</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Engenharia de
+                    Dados</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Métricas
+                    Preditivas</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Evolução Humana</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Aceleração de
+                    Negócios</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <!-- Duplicado para loop perfeito sem falhas visuais -->
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Mapeamento
+                    Financeiro</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Engenharia de
+                    Dados</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Métricas
+                    Preditivas</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Evolução Humana</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-stone-500">Aceleração de
+                    Negócios</span>
+                <span class="mx-8 text-[11px] font-mono uppercase tracking-widest text-emerald-500/50">★</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terceira Dobra: Metodologia e Processos (Bento Grid Premium) -->
+    <section id="metodologia" class="bg-[#050505] py-24 px-6 md:px-12 relative z-20 overflow-hidden">
+
+        <!-- Background Ambient Glow -->
+        <div
+            class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-emerald-900/10 blur-[130px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-[1440px] mx-auto relative z-10">
+
+            <!-- Header -->
+            <div class="text-center mb-20 gsap-fade-up">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-500 mb-4 block">Como
+                    Operamos</span>
+                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6">
+                    Diagnosticar. Arquitetar. <span class="text-stone-600">Escalar.</span>
+                </h2>
+                <p class="text-stone-400 font-sans text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-balance">
+                    Transformamos dados brutos em decisões precisas. Nossa atuação utiliza metodologias ágeis e
+                    mapeamento cirúrgico para sanar ineficiências e expandir fronteiras corporativas.
+                </p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 auto-rows-auto md:auto-rows-[340px] gap-6">
+
+                <!-- Card 01: Diagnóstico (Span 8) -->
+                <div class="col-span-1 md:col-span-8 gsap-fade-up">
+                    <div class="flashlight-card-dark bg-stone-900/40 rounded-3xl border border-white/5 p-8 md:p-12 flex flex-col justify-between group cursor-default h-full transition-transform duration-500 hover:-translate-y-1"
+                        onmousemove="updateFlashlight(event, this)">
+                        <div class="flex justify-between items-start mb-8">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-stone-300 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
+                                <span class="font-mono text-sm">01</span>
+                            </div>
+                            <i
+                                class="ph ph-target text-4xl text-stone-600 group-hover:text-emerald-400 group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-3xl md:text-4xl font-medium text-white mb-4">Mapeamento <br
+                                    class="hidden md:block">Analítico 360°</h3>
+                            <p class="text-stone-400 text-sm md:text-base leading-relaxed max-w-lg">
+                                Imersão total na sua estrutura. Investigamos ofensores financeiros, gargalos produtivos
+                                e lacunas comportamentais das equipes, unindo cruzamento de dados a auditorias de
+                                processos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Metric: Visão Sistêmica (Span 4) -->
+                <div class="col-span-1 md:col-span-4 gsap-fade-up" data-delay="0.15">
+                    <div
+                        class="bg-gradient-to-br from-stone-800/50 to-stone-900/50 rounded-3xl border border-white/5 p-8 md:p-10 flex flex-col justify-center items-center text-center group transition-transform duration-500 hover:-translate-y-1 h-full">
+                        <div class="relative w-full flex justify-center items-center mb-6">
+                            <!-- Círculos Pulsantes Background -->
+                            <div
+                                class="absolute inset-0 max-w-[150px] max-h-[150px] m-auto border border-emerald-500/20 rounded-full animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]">
+                            </div>
+                            <div
+                                class="absolute inset-0 max-w-[120px] max-h-[120px] m-auto border border-white/5 rounded-full">
+                            </div>
+
+                            <!-- Core Text -->
+                            <div
+                                class="w-32 h-32 rounded-full border border-white/10 flex items-center justify-center relative z-10 bg-stone-950/80 backdrop-blur-md shadow-2xl">
+                                <div class="flex flex-col items-center">
+                                    <span class="font-display text-4xl font-bold text-white mb-0">R.O.I</span>
+                                    <i class="ph ph-trend-up text-emerald-400 text-sm mt-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="font-mono text-[11px] uppercase tracking-widest text-stone-300">Inteligência
+                            Financeira Orientada a Retorno</h3>
+                    </div>
+                </div>
+
+                <!-- Card 02: Blueprint / Arquitetura (Span 5) -->
+                <div class="col-span-1 md:col-span-5 gsap-fade-up" data-delay="0.3">
+                    <div
+                        class="relative overflow-hidden rounded-3xl border border-white/5 bg-stone-950 flex flex-col justify-end min-h-[300px] h-full group transition-transform duration-500 hover:-translate-y-1">
+                        <!-- Abstract Background Graphic -->
+                        <div
+                            class="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none">
+                            <div
+                                class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-stone-800/40 via-transparent to-transparent">
+                            </div>
+                            <!-- Abstract forms to represent "Architecture" -->
+                            <div class="absolute -right-8 top-12 w-48 h-48 border-[1px] border-white/10 rounded-full">
+                            </div>
+                            <div
+                                class="absolute -right-16 top-4 w-64 h-64 border-[1px] border-emerald-500/20 rounded-full">
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 p-8 md:p-10 w-full">
+                            <div class="flex justify-between items-start mb-6 w-full">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-stone-300 group-hover:bg-white/10 transition-colors">
+                                    <span class="font-mono text-sm">02</span>
+                                </div>
+                                <i
+                                    class="ph ph-tree-structure text-3xl text-stone-600 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-display text-2xl md:text-3xl font-medium text-white mb-3">Solução sob Medida
+                            </h3>
+                            <p class="text-stone-400 text-sm leading-relaxed text-balance">
+                                Desenhamos arquiteturas modulares: sistemas sob medida, dashboards em Power BI fluídos e
+                                pipelines de ETL sólidos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 03: Deployment & Scale (Span 7) -->
+                <div class="col-span-1 md:col-span-7 gsap-fade-up" data-delay="0.45">
+                    <div class="flashlight-card-dark bg-stone-900/40 rounded-3xl border border-white/5 p-8 md:p-12 flex flex-col justify-between group cursor-default transition-transform duration-500 hover:-translate-y-1 h-full"
+                        onmousemove="updateFlashlight(event, this)">
+                        <div class="flex justify-between items-start mb-8">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-stone-300">
+                                <span class="font-mono text-sm">03</span>
+                            </div>
+                            <!-- Graphic Equalizer -->
+                            <div class="flex gap-1.5 items-end h-8">
+                                <div
+                                    class="w-1.5 h-3 bg-emerald-500/40 rounded-full animate-[pulse_1.5s_ease-in-out_infinite] group-hover:h-5 transition-all duration-300">
+                                </div>
+                                <div
+                                    class="w-1.5 h-6 bg-emerald-500/60 rounded-full animate-[pulse_1s_ease-in-out_infinite_0.2s] group-hover:h-8 transition-all duration-300">
+                                </div>
+                                <div
+                                    class="w-1.5 h-4 bg-emerald-500/80 rounded-full animate-[pulse_1.2s_ease-in-out_infinite_0.4s] group-hover:h-6 transition-all duration-300">
+                                </div>
+                                <div
+                                    class="w-1.5 h-2 bg-emerald-500/40 rounded-full animate-[pulse_0.8s_ease-in-out_infinite_0.6s] group-hover:h-4 transition-all duration-300">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+                            <div class="md:col-span-10">
+                                <h3 class="font-display text-3xl md:text-4xl font-medium text-white mb-4">Implantação e
+                                    Escala</h3>
+                                <p class="text-stone-400 text-sm md:text-base leading-relaxed pr-6">
+                                    A execução é assistida até a maturação do negócio. Treinamos suas equipes,
+                                    estabilizamos a infraestrutura tecnológica e ajustamos parâmetros em ciclo contínuo
+                                    (PDCA) para garantir tração em vendas e solidez.
+                                </p>
+                            </div>
+                            <div class="md:col-span-2 flex md:justify-end">
+                                <button
+                                    class="w-14 h-14 rounded-full border border-stone-600 text-white flex items-center justify-center group-hover:bg-white group-hover:border-white group-hover:text-stone-900 shadow-xl transition-colors">
+                                    <i
+                                        class="ph ph-arrow-up-right text-2xl group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quarta Dobra/Footer: Contato & Liderança -->
+    <section id="contato"
+        class="bg-stone-950 py-24 px-6 md:px-12 relative z-20 overflow-hidden border-t border-white/5">
+
+        <!-- Elemento Decorativo Background -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <!-- Grid pattern fade off -->
+            <div
+                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:200px_200px] opacity-20">
+            </div>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            <!-- Left Side: Header & Context -->
+            <div class="gsap-fade-up">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-500 mb-4 block">Fale
+                    Conosco</span>
+                <h2 class="font-display text-4xl md:text-5xl font-medium tracking-tight text-white mb-6">
+                    Inicie sua transformação estrutural.
+                </h2>
+                <p class="text-stone-400 font-sans text-lg max-w-md leading-relaxed mb-10 text-balance">
+                    Nossos especialistas estão prontos para compreender seu cenário atual e formatar um ecossistema de
+                    soluções adequado à sua realidade corporativa e maturidade tecnológica.
+                </p>
+                <div class="btn-beam-dark px-[2px] py-[2px] rounded-full inline-block cursor-default tooltip group">
+                    <span
+                        class="btn-beam-content-dark px-6 py-3 rounded-full bg-stone-900 font-mono text-xs text-white uppercase tracking-widest shadow-2xl flex items-center gap-3 transition-colors group-hover:bg-stone-800">
+                        <i class="ph ph-envelope-simple text-base text-emerald-500"></i>
+                        contato@cersolucoes.com.br
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Cards (Bento style) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+
+                <!-- Tainá Ribeiro (Consultora) -->
+                <div class="gsap-fade-up">
+                    <div class="flashlight-card-dark bg-[#0a0a0a] rounded-3xl border border-white/10 p-8 flex flex-col group transition-transform duration-500 hover:-translate-y-1 shadow-2xl h-full"
+                        onmousemove="updateFlashlight(event, this)">
+                        <div
+                            class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-stone-400 mb-6 border border-white/10 group-hover:text-emerald-400 group-hover:border-emerald-500/20 group-hover:bg-emerald-500/10 transition-all duration-500">
+                            <i class="ph ph-handshake text-3xl"></i>
+                        </div>
+                        <div class="mb-auto">
+                            <h3 class="font-display text-xl md:text-2xl font-medium text-white mb-1">Tainá Ribeiro</h3>
+                            <span
+                                class="text-[10px] font-mono uppercase tracking-widest text-stone-500 group-hover:text-stone-300 transition-colors mb-6 block">Consultora
+                                Empresarial</span>
+
+                            <div class="space-y-4 mb-8">
+                                <a href="mailto:taina.ribeiro@cersolucoes.com.br"
+                                    class="flex items-center gap-3 text-stone-400 hover:text-emerald-400 transition-colors group/link w-fit">
+                                    <i
+                                        class="ph ph-envelope-simple text-lg text-stone-500 group-hover/link:text-emerald-400 transition-colors"></i>
+                                    <span
+                                        class="font-sans text-[13px] md:text-sm">taina.ribeiro@cersolucoes.com.br</span>
+                                </a>
+                                <a href="tel:+5591997072309"
+                                    class="flex items-center gap-3 text-stone-400 hover:text-emerald-400 transition-colors group/link w-fit">
+                                    <i
+                                        class="ph ph-phone text-lg text-stone-500 group-hover/link:text-emerald-400 transition-colors"></i>
+                                    <span class="font-sans text-[13px] md:text-sm">(91) 99707-2309</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5591997072309" target="_blank"
+                            class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-center text-[10px] font-mono uppercase tracking-widest hover:bg-emerald-500/10 hover:border-emerald-500/30 text-stone-300 hover:text-emerald-400 transition-all font-medium flex justify-center items-center gap-2 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                            <i class="ph ph-whatsapp-logo text-lg"></i> Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Allan Ribeiro (Tecnologia) -->
+                <div class="gsap-fade-up" data-delay="0.15">
+                    <div class="flashlight-card-dark bg-[#0a0a0a] rounded-3xl border border-white/10 p-8 flex flex-col group transition-transform duration-500 hover:-translate-y-1 shadow-2xl h-full"
+                        onmousemove="updateFlashlight(event, this)">
+                        <div
+                            class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-stone-400 mb-6 border border-white/10 group-hover:text-emerald-400 group-hover:border-emerald-500/20 group-hover:bg-emerald-500/10 transition-all duration-500">
+                            <i class="ph ph-hard-drives text-3xl"></i>
+                        </div>
+                        <div class="mb-auto">
+                            <h3 class="font-display text-xl md:text-2xl font-medium text-white mb-1">Allan Ribeiro</h3>
+                            <!-- Aprimorado o cargo de "Consultor Tecnologia" -->
+                            <span
+                                class="text-[10px] font-mono uppercase tracking-widest text-stone-500 group-hover:text-stone-300 transition-colors mb-6 block">Arquiteto
+                                de Soluções &<br>Engenharia de Dados</span>
+
+                            <div class="space-y-4 mb-8">
+                                <a href="mailto:allan.ribeiro@cersolucoes.com.br"
+                                    class="flex items-center gap-3 text-stone-400 hover:text-emerald-400 transition-colors group/link w-fit">
+                                    <i
+                                        class="ph ph-envelope-simple text-lg text-stone-500 group-hover/link:text-emerald-400 transition-colors"></i>
+                                    <span
+                                        class="font-sans text-[12px] lg:text-[13px] break-all">allan.ribeiro@cersolucoes.com.br</span>
+                                </a>
+                                <a href="tel:+5591992204411"
+                                    class="flex items-center gap-3 text-stone-400 hover:text-emerald-400 transition-colors group/link w-fit">
+                                    <i
+                                        class="ph ph-phone text-lg text-stone-500 group-hover/link:text-emerald-400 transition-colors"></i>
+                                    <span class="font-sans text-[13px] md:text-sm">(91) 99220-4411</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5591992204411" target="_blank"
+                            class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-center text-[10px] font-mono uppercase tracking-widest hover:bg-emerald-500/10 hover:border-emerald-500/30 text-stone-300 hover:text-emerald-400 transition-all font-medium flex justify-center items-center gap-2 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                            <i class="ph ph-whatsapp-logo text-lg"></i> Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Mininalista Bottom -->
+        <div
+            class="max-w-[1440px] mx-auto mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+            <span class="text-xs font-mono text-stone-500 uppercase tracking-widest">© 2024 C.E.R - Soluções para
+                Empresas</span>
+            <div class="flex items-center gap-6">
+                <!-- Redes Sociais Minimalistas -->
+                <a href="https://www.instagram.com/cer_solucoesparaempresas?igsh=ajkxd3NiN2g3dTMy" target="_blank"
+                    class="w-10 h-10 rounded-full border border-white/5 bg-white/5 flex items-center justify-center text-stone-400 hover:bg-white hover:text-stone-900 transition-colors">
+                    <i class="ph ph-instagram-logo text-lg"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -426,13 +885,13 @@
             const rect = element.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
-            
+
             element.style.setProperty('--mouse-x', `${x}px`);
             element.style.setProperty('--mouse-y', `${y}px`);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            
+
             // 1. Text & Elements Entry Animation (Fade-Up and Stagger)
             gsap.from(".gsap-stagger", {
                 y: 40,
@@ -452,7 +911,7 @@
             canvas.height = 720;
 
             const frameCount = 120; // total de quadros extraídos da conversão
-            
+
             // Formatador de index => frame_0001.webp
             const currentFrame = index => (
                 `assets/frames/frame_${(index + 1).toString().padStart(4, '0')}.webp`
@@ -488,7 +947,7 @@
                     scrub: 1.2,    // Voltando a barra de Scrub (Inércia de Catch-Up) de 0.1 para 1.2. Isso garante a perfeita fluidez.
                 },
                 onUpdate: () => {
-                     // Sempre que atualizar frame, limpa e redesenha
+                    // Sempre que atualizar frame, limpa e redesenha
                     const frameImg = images[canvasObj.frame];
                     // Só tenta desenhar a imagem se ela estiver 100% no buffer
                     if (frameImg && frameImg.complete) {
@@ -499,21 +958,24 @@
 
             // 3. Reveals & Animations components outside of Hero
             gsap.utils.toArray('.gsap-fade-up').forEach((elem) => {
-                gsap.fromTo(elem, 
-                { y: 50, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: elem,
-                        start: "top 85%", // Inicia animação quando o card/elemento atinge 85% do viewport de baixo para cima
-                    }
-                });
+                let dly = elem.getAttribute('data-delay') || 0;
+                gsap.fromTo(elem,
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.2,
+                        ease: "power3.out",
+                        delay: parseFloat(dly),
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%", // Inicia animação quando o card/elemento atinge 85% do viewport de baixo para cima
+                        }
+                    });
             });
 
         });
     </script>
 </body>
+
 </html>
