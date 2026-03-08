@@ -1,0 +1,40 @@
+{
+    "name": "C&E Soluções para Empresas",
+    "short_name": "C&R Soluções",
+    "start_url": ".",
+    "display": "standalone",
+    "description": "Site da empresa C&R Soluções para Empresas",
+    "orientation": "natural",
+    "icons": [
+        {
+            "src": "/icons/icon-192.svg",
+            "type": "image/svg",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/icons/icon-512.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/icons/icon-maskable-192.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/icons/icon-maskable-512.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/icons/apple-touch-icon-192.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/icons/loading-animation.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        }
+    ]
+}
