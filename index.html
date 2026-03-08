@@ -88,14 +88,10 @@
         <!-- O container principal que prende a "Hero Section" na tela enquanto rolamos o scroll-container -->
         <div class="sticky top-0 w-full h-screen overflow-hidden bg-black">
 
-            <!-- Video Background Paralax -->
-            <!-- object-cover preenche a tela, fundo preto adicionado para destacar as cenas brancas -->
+            <!-- Canvas Sequence Background (True Apple Style Performance) -->
+            <!-- object-cover preenche a tela usando CSS e o canvas garante a fluidez ultra rápida baseada em imagem por frame -->
             <div class="absolute inset-0 bg-black"></div>
-            <video id="bg-video" class="absolute inset-0 w-full h-full object-cover opacity-60" 
-                   muted playsinline preload="auto">
-                <source src="assets/video.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
+            <canvas id="bg-canvas" class="absolute inset-0 w-full h-full object-cover opacity-60"></canvas>
 
             <!-- Gradientes para realçar contraste de forma sutil e unificar com o fundo -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/90 md:from-black/70 to-transparent"></div>
@@ -115,15 +111,15 @@
                 
                 <!-- Links ao Centro -->
                 <div class="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-widest text-stone-400">
-                    <a href="#" class="hover:text-white transition-colors">Consulting</a>
-                    <a href="#" class="hover:text-white transition-colors">Technology</a>
+                    <a href="#" class="hover:text-white transition-colors">Consultoria</a>
+                    <a href="#" class="hover:text-white transition-colors">Tecnologia</a>
                     <a href="#" class="hover:text-white transition-colors">Insights</a>
-                    <a href="#" class="hover:text-white transition-colors">About</a>
+                    <a href="#" class="hover:text-white transition-colors">Sobre</a>
                 </div>
                 
                 <!-- CTA Destaque -->
                 <button class="bg-white text-stone-900 px-6 py-2.5 rounded-sm text-xs font-mono uppercase tracking-widest hover:bg-stone-200 hover:-translate-y-0.5 transition-all shadow-md flex items-center gap-2 group">
-                    Let's Talk
+                    Fale Conosco
                     <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </nav>
@@ -136,19 +132,19 @@
                     
                     <div class="inline-flex items-center gap-2 mb-8 gsap-stagger">
                         <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.7)]"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Next-Gen Solutions</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Soluções Next-Gen</span>
                     </div>
 
                     <!-- Impactful Lettering (H1) -->
                     <h1 class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-8 text-white gsap-stagger text-balance">
-                        Elevate Your <br>
-                        <span class="text-stone-400">Business</span> <br>
-                        Intelligence
+                        Eleve a sua <br>
+                        <span class="text-stone-400">Inteligência</span> <br>
+                        de Negócios
                     </h1>
                     
                     <!-- Short Description -->
                     <p class="text-lg md:text-xl font-sans font-light text-stone-300 max-w-xl mb-12 leading-relaxed gsap-stagger">
-                        We merge strategic consulting with cutting-edge technology to architect scalable growth, operational excellence, and lasting digital transformation.
+                        Unimos consultoria estratégica com tecnologia de ponta para arquitetar crescimento escalável, excelência operacional e transformação digital duradoura.
                     </p>
                     
                     <!-- Buttons Container -->
@@ -157,14 +153,14 @@
                         <button class="group relative px-8 py-4 bg-white text-stone-900 overflow-hidden rounded-sm transition-all hover:shadow-xl hover:-translate-y-1">
                             <div class="absolute inset-0 w-full h-full bg-stone-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
                             <span class="relative z-10 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
-                                Start Consulting
+                                Iniciar Consultoria
                                 <i class="ph ph-arrow-right text-base group-hover:translate-x-1 transition-transform"></i>
                             </span>
                         </button>
                         
                         <!-- Secondary Ghost CTA -->
                         <button class="px-8 py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 rounded-sm text-white font-mono text-xs uppercase tracking-widest transition-all hover:-translate-y-1 flex items-center gap-2 shadow-sm hover:shadow-md backdrop-blur-sm">
-                            View Methodology
+                            Ver Metodologia
                         </button>
                     </div>
                 </div>
@@ -182,24 +178,24 @@
                                 <i class="ph ph-chart-line-up text-3xl"></i>
                             </div>
                             <span class="px-3 py-1 bg-white/10 text-stone-200 rounded-full text-[10px] font-mono uppercase tracking-widest border border-white/20 shadow-sm backdrop-blur-md">
-                                Live Metrics
+                                Métricas ao Vivo
                             </span>
                         </div>
 
-                        <h3 class="font-display text-3xl font-medium tracking-tight text-white mb-2 relative z-10">Performance Output</h3>
+                        <h3 class="font-display text-3xl font-medium tracking-tight text-white mb-2 relative z-10">Resultados e Performance</h3>
                         <p class="text-sm font-sans text-stone-300 leading-relaxed mb-10 relative z-10">
-                            Our architecture ensures maximum efficiency and systemic scalability across all digital units.
+                            Nossa arquitetura garante máxima eficiência e escalabilidade sistêmica em todas as unidades digitais.
                         </p>
 
                         <!-- Dynamic Metrics Container -->
                         <div class="grid grid-cols-2 gap-4 relative z-10">
                             <div class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md">
                                 <span class="block text-4xl font-bold font-display text-white mb-1">3.2x</span>
-                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Revenue Growth</span>
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Aumento de Receita</span>
                             </div>
                             <div class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md delay-75">
                                 <span class="block text-4xl font-bold font-display text-white mb-1">99%</span>
-                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">System Uptime</span>
+                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Disponibilidade</span>
                             </div>
                         </div>
                     </div>
@@ -209,24 +205,141 @@
             
             <!-- Scroll Indicator -->
             <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse opacity-70 z-20">
-                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-500">Scroll to Explore</span>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-500">Role para Explorar</span>
                 <i class="ph ph-caret-down text-stone-500"></i>
             </div>
         </div>
     </div>
 
-    <!-- Dummy Block para rolar além do hero -->
-    <section class="min-h-screen bg-stone-900 flex items-center justify-center p-12 text-center text-white relative z-20 overflow-hidden">
-        <!-- Textura subtle sobre bg escuro -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    <!-- Segunda Dobra: Serviços e Propósitos -->
+    <section class="min-h-screen bg-[#111111] py-24 px-6 md:px-12 relative z-20 overflow-hidden border-t border-white/10 shadow-[-50px_0_100px_-20px_rgba(0,0,0,0.8)]">
+        <!-- Textura sutil quadriculada (Grid) -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
         
-        <div class="relative z-10">
-            <h2 class="font-display text-5xl md:text-7xl font-medium max-w-4xl mx-auto tracking-tight text-balance mb-6">
-                Deep Industry Expertise.
-            </h2>
-            <p class="text-stone-400 font-mono text-sm max-w-xl mx-auto uppercase tracking-widest">
-                Scroll past hero section is now complete.
-            </p>
+        <div class="max-w-[1440px] mx-auto relative z-10">
+            <!-- Header Section (Alinhado à esquerda como na referência) -->
+            <div class="mb-20 max-w-3xl gsap-fade-up">
+                <h2 class="font-display text-4xl md:text-5xl lg:text-5xl font-medium tracking-tight text-white mb-6">
+                    Ecossistema de Soluções
+                </h2>
+                <p class="text-stone-400 font-sans text-lg md:text-xl leading-relaxed">
+                    Nossa metodologia unifica o desenvolvimento humano, sólida visão de mercado e tecnologia de ponta para guiar sua empresa pelo percurso técnico até a excelência operacional.
+                </p>
+            </div>
+
+            <!-- Content Grid 2-cols -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Coluna Esquerda: Graphic Card (Inspirado no "Neural Architecture" visual da imagem) -->
+                <div class="col-span-1 lg:col-span-6 w-full gsap-fade-up">
+                    <div class="w-full aspect-square md:aspect-[4/3] bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] rounded-[2rem] border border-white/5 relative overflow-hidden flex items-center justify-center shadow-2xl group">
+                        
+                        <!-- Linhas Radiais de Radar -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 transition-opacity duration-700 group-hover:opacity-40">
+                            <div class="w-[80%] h-[80%] rounded-full border border-white/30"></div>
+                            <div class="absolute w-[60%] h-[60%] rounded-full border border-white/20"></div>
+                            <div class="absolute w-[40%] h-[40%] rounded-full border border-white/40"></div>
+                            <div class="absolute w-[20%] h-[20%] rounded-full border border-white/50"></div>
+                        </div>
+
+                        <!-- Hub Central -->
+                        <div class="relative z-10 w-24 h-24 bg-stone-900 rounded-full border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.1)] flex items-center justify-center transition-transform hover:scale-110 duration-500 cursor-pointer">
+                            <div class="absolute inset-0 rounded-full bg-emerald-500/20 blur-xl"></div>
+                            <i class="ph ph-buildings text-4xl text-white relative z-10"></i>
+                        </div>
+
+                        <!-- Conexão 1 (Empresarial) -->
+                        <div class="absolute top-[20%] left-[15%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-stone-400 hover:text-white hover:border-white/30 hover:bg-white/10 transition-colors shadow-lg">
+                                <i class="ph ph-chart-line-up text-2xl"></i>
+                            </div>
+                            <!-- Fio Conector visual usando clip path ou pseudo elements-->
+                            <svg class="absolute bottom-[-60px] right-[-60px] w-20 h-20 pointer-events-none opacity-40 text-stone-500" preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
+
+                        <!-- Conexão 2 (Tecnologia) -->
+                        <div class="absolute top-[30%] right-[10%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-stone-400 hover:text-white hover:border-white/30 hover:bg-white/10 transition-colors shadow-lg">
+                                <i class="ph ph-code-block text-2xl"></i>
+                            </div>
+                            <svg class="absolute bottom-[-45px] left-[-70px] w-24 h-20 pointer-events-none opacity-40 text-stone-500" preserveAspectRatio="none">
+                                <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
+
+                        <!-- Conexão 3 (Pessoas/Propósito) -->
+                        <div class="absolute bottom-[20%] right-[20%] flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-stone-400 hover:text-white hover:border-white/30 hover:bg-white/10 transition-colors shadow-lg">
+                                <i class="ph ph-users-three text-2xl"></i>
+                            </div>
+                            <svg class="absolute top-[-50px] left-[-40px] w-16 h-16 pointer-events-none opacity-40 text-stone-500" preserveAspectRatio="none">
+                                <line x1="100%" y1="100%" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
+
+                        <!-- Partícula flutuante (Estilo "Edge Computation" point) -->
+                        <div class="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.9)] top-[40%] left-[45%] animate-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Lista de Serviços e Propósitos -->
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center gap-12 pl-0 lg:pl-10">
+                    
+                    <!-- Item 01 -->
+                    <div class="flex gap-6 group gsap-fade-up">
+                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                            01
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-medium text-white mb-3 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Propósito Essencial</h3>
+                            <div class="text-stone-400 font-sans text-[15px] leading-relaxed mb-4">
+                                Ajudarmos a evoluir <strong class="text-stone-200 font-normal">profissionais capacitados</strong> para contribuírem diretamente com o crescimento contínuo da empresa. Operamos em uma busca implacável pela <strong class="text-stone-200 font-normal">excelência operacional</strong> em tudo o que fazemos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 02 -->
+                    <div class="flex gap-6 group gsap-fade-up" style="transition-delay: 100ms">
+                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                            02
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Consultoria Empresarial</h3>
+                            <!-- Tag Cloud baseada nos serviços. -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">VIABILIDADE DE MERCADO</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO FINANCEIRO & OP.</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TERCEIRIZAÇÃO DE DEPARTAMENTOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">RECRUTAMENTO E SELEÇÃO</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE QUALIDADE</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE PESSOAS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO FINANCEIRA</span>
+                                <span class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">GESTÃO COMERCIAL (ACELERAÇÃO)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 03 -->
+                    <div class="flex gap-6 group gsap-fade-up" style="transition-delay: 200ms">
+                        <div class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
+                            03
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">Soluções em Tecnologia</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">B.I. E ANÁLISE DE DADOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">AUTOMAÇÃO DE PROCESSOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ARQUITETURA DE DADOS E ETL</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">SISTEMAS CUSTOMIZADOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ATENDIMENTO, TREINAMENTO & SUPORTE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
@@ -249,40 +362,76 @@
                 delay: 0.2
             });
 
-            // 2. Video Scrub ScrollTrigger (Apple Style)
-            const video = document.getElementById('bg-video');
+            // 2. Image Sequence Scrub ScrollTrigger (Native Apple Style Performance via Canvas)
+            const canvas = document.getElementById("bg-canvas");
+            const context = canvas.getContext("2d");
+
+            // Tamanho interno de renderização do canvas. O CSS object-cover vai forçar o preenchimento proporcional garantindo proporção wide
+            canvas.width = 1280;
+            canvas.height = 720;
+
+            const frameCount = 120; // total de quadros extraídos da conversão
             
-            const setupScrollVideo = () => {
-                const duration = video.duration || 10; // Fallback se metadata retornar 0 no momento do setup inicial
-                
-                // Usando um Proxy de Objeto para atualizar via OnUpdate. 
-                // Isso otimiza no requestAnimationFrame render cycle do GSAP
-                let proxy = { currentTime: 0 };
-                
-                gsap.to(proxy, {
-                    currentTime: duration,
-                    ease: "none",                 // Linear garante pareamento com rolagem
+            // Formatador de index => frame_0001.webp
+            const currentFrame = index => (
+                `assets/frames/frame_${(index + 1).toString().padStart(4, '0')}.webp`
+            );
+
+            const images = [];
+            const canvasObj = { frame: 0 };
+
+            // Inicialização visual: Carrega o primeiro frame imediatamente 
+            const img = new Image();
+            img.src = currentFrame(0);
+            img.onload = () => {
+                context.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+            images[0] = img;
+
+            // Carregamento Eager/Lazy das imagens restantes
+            for (let i = 1; i < frameCount; i++) {
+                const imgData = new Image();
+                imgData.src = currentFrame(i);
+                images.push(imgData);
+            }
+
+            // Timeline otimizada gerenciada pelo ScrollTrigger usando array in memory das imagens Webp
+            gsap.to(canvasObj, {
+                frame: frameCount - 1,
+                snap: "frame",     // Força o GSAP a parar apenas em frames inteiros e válidos (indexes corretos)
+                ease: "none",      // Curva linear para amarrar com o scroll do mouse uniformemente
+                scrollTrigger: {
+                    trigger: "#scroll-container",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.1,    // Reduzido o scrub delay de 1 para 0.1 pois Canvas não possui lag de inter-frame decoding como vídeos mp4
+                },
+                onUpdate: () => {
+                     // Sempre que atualizar frame, limpa e redesenha (Draw calls em Canvas são em média 60+ FPS lock)
+                    const frameImg = images[canvasObj.frame];
+                    // Só tenta desenhar a imagem se ela estiver de fato 100% baixada no buffer do navegador
+                    if (frameImg && frameImg.complete) {
+                        context.drawImage(frameImg, 0, 0, canvas.width, canvas.height);
+                    }
+                }
+            });
+
+            // 3. Reveals & Animations components outside of Hero
+            gsap.utils.toArray('.gsap-fade-up').forEach((elem) => {
+                gsap.fromTo(elem, 
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
                     scrollTrigger: {
-                        trigger: "#scroll-container",
-                        start: "top top",
-                        end: "bottom bottom",
-                        scrub: 1,                 // 1 segundo de smoothing garante fluidez
-                    },
-                    onUpdate: () => {
-                        // Limitar atualização apenas se o vídeo tem dados para buscar (previne erros DOMException)
-                        if (video.readyState >= 2) { 
-                            video.currentTime = proxy.currentTime;
-                        }
+                        trigger: elem,
+                        start: "top 85%", // Inicia animação quando o card/elemento atinge 85% do viewport de baixo para cima
                     }
                 });
-            };
+            });
 
-            // Certifica de aplicar metadata ou esperar carregar antes de atrelar a duração ao gsap
-            if (video.readyState >= 1) { 
-                setupScrollVideo();
-            } else {
-                video.addEventListener("loadedmetadata", setupScrollVideo);
-            }
         });
     </script>
 </body>
