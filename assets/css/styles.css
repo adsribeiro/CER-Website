@@ -1,0 +1,136 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EAEAE5;
+    color: #1C1917;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EAEAE5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Glassmorphism Styles Override */
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* FLASHLIGHT EFFECT DARK (Adaptado do Design System) */
+.flashlight-card-dark {
+    position: relative;
+    overflow: hidden;
+}
+
+.flashlight-card-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(255, 255, 255, 0.15),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flashlight-card-dark:hover::before {
+    opacity: 1;
+}
+
+/* BEAM BUTTON ANIMATION DARK (Adaptado do Design System) */
+@keyframes spinBeam {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-beam-dark {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.btn-beam-dark::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: conic-gradient(from 90deg at 50% 50%, #1c1917 0%, transparent 40%, #ffffff 50%, transparent 60%, #1c1917 100%);
+    animation: spinBeam 6s linear infinite;
+    border-radius: inherit;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.btn-beam-dark:hover::before {
+    opacity: 1;
+}
+
+.btn-beam-content-dark {
+    background-color: #1c1917;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* MARQUEE */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+/* Subtle Noise Texture Overlay */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
