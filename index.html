@@ -66,18 +66,21 @@
 
     <div class="noise"></div>
 
-    <!-- Scroll Container for Parallax ScrollTrigger -->
-    <!-- Ajustado para h-[150vh] para garantir pista suficiente para os frames não "pularem" por pixel -->
-    <div id="scroll-container" class="relative w-full h-[150vh]">
+    <!-- Hero Section -->
+    <div class="relative w-full h-[100dvh]">
 
         <!-- Sticky Wrapper -->
-        <!-- O container principal que prende a "Hero Section" na tela enquanto rolamos o scroll-container -->
-        <div class="sticky top-0 w-full h-screen overflow-hidden bg-black">
+        <!-- O container principal que prende a "Hero Section" -->
+        <div class="sticky top-0 w-full h-[100dvh] overflow-hidden bg-black">
 
-            <!-- Canvas Sequence Background (True Apple Style Performance) -->
-            <!-- object-cover preenche a tela usando CSS e o canvas garante a fluidez ultra rápida baseada em imagem por frame -->
+            <!-- Video Background (Optimized Loop) -->
+            <!-- object-cover preenche a tela, autoplay/loop garante reprodução infinita e silenciosa -->
             <div class="absolute inset-0 bg-black"></div>
-            <canvas id="bg-canvas" class="absolute inset-0 w-full h-full object-cover opacity-60"></canvas>
+            <video 
+                autoplay loop muted playsinline 
+                class="absolute left-0 top-0 md:top-0 md:inset-0 w-full h-[100dvh] md:h-full object-cover opacity-60 [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] md:[mask-image:none]">
+                <source src="assets/videos/video.mp4" type="video/mp4">
+            </video>
 
             <!-- Gradientes para realçar contraste de forma sutil e unificar com o fundo -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/90 md:from-black/70 to-transparent"></div>
@@ -334,14 +337,24 @@
                         </div>
                         <div>
                             <h3
-                                class="font-display text-2xl font-medium text-white mb-3 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
-                                Propósito Essencial</h3>
-                            <div class="text-stone-400 font-sans text-[15px] leading-relaxed mb-4">
-                                Ajudarmos a evoluir <strong class="text-stone-200 font-normal">profissionais
-                                    capacitados</strong> para contribuírem diretamente com o crescimento contínuo da
-                                empresa. Operamos em uma busca implacável pela <strong
-                                    class="text-stone-200 font-normal">excelência operacional</strong> em tudo o que
-                                fazemos.
+                                class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
+                                Consultoria Empresarial</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">VIABILIDADE DE MERCADO</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ASSESSORIA COMERCIAL</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO FINANCEIRO & OP.</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TERCEIRIZAÇÃO DE DEPARTAMENTOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">RECRUTAMENTO E SELEÇÃO</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE QUALIDADE</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE PESSOAS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO DE PROCESSOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO FINANCEIRA</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ASSESSORIA FINANCEIRA</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">PLANO ESTRATÉGICO</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">PLANO DE NEGÓCIOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO ORGANIZACIONAL</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">OTIMIZAÇÃO DE PROCESSOS</span>
+                                <span class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">GESTÃO COMERCIAL (ACELERAÇÃO)</span>
                             </div>
                         </div>
                     </div>
@@ -355,39 +368,21 @@
                         <div>
                             <h3
                                 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
-                                Consultoria Empresarial</h3>
-                            <!-- Tag Cloud baseada nos serviços. -->
+                                Tecnologia e Dados</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">VIABILIDADE
-                                    DE MERCADO</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">DIAGNÓSTICO
-                                    FINANCEIRO & OP.</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TERCEIRIZAÇÃO
-                                    DE DEPARTAMENTOS</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">RECRUTAMENTO
-                                    E SELEÇÃO</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
-                                    DE QUALIDADE</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
-                                    DE PESSOAS</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">GESTÃO
-                                    FINANCEIRA</span>
-                                <span
-                                    class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">GESTÃO
-                                    COMERCIAL (ACELERAÇÃO)</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">B.I. E ANÁLISE DE DADOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">AUTOMAÇÃO DE PROCESSOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ENGENHARIA DE DADOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ARQUITETURA DE DADOS E ETL</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">SISTEMAS CUSTOMIZADOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">INTEGRAÇÃO DE APIS E ERPS</span>
+                                <span class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-emerald-500/20 hover:text-emerald-300 cursor-default">DASHBOARDS ESTRATÉGICOS</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 03 -->
-                    <div class="flex gap-6 group gsap-fade-up" data-delay="0.3">
+                    <div class="flex gap-6 group gsap-fade-up" data-delay="0.30">
                         <div
                             class="flex-shrink-0 w-12 h-12 mt-1 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-stone-400 font-mono text-sm group-hover:bg-white group-hover:text-stone-900 transition-colors shadow-sm cursor-default">
                             03
@@ -395,23 +390,11 @@
                         <div>
                             <h3
                                 class="font-display text-2xl font-medium text-white mb-4 tracking-wide cursor-default transition-transform group-hover:translate-x-1 duration-300">
-                                Soluções em Tecnologia</h3>
+                                Capacitação & Treinamentos</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">B.I.
-                                    E ANÁLISE DE DADOS</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">AUTOMAÇÃO
-                                    DE PROCESSOS</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ARQUITETURA
-                                    DE DADOS E ETL</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">SISTEMAS
-                                    CUSTOMIZADOS</span>
-                                <span
-                                    class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ATENDIMENTO,
-                                    TREINAMENTO & SUPORTE</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">ATENDIMENTO, TREINAMENTO & SUPORTE</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">TREINAMENTOS CORPORATIVOS</span>
+                                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-stone-300 text-[11px] font-mono tracking-widest rounded transition-colors hover:bg-white/10 hover:text-white cursor-default">PALESTRAS EMPRESARIAIS</span>
                             </div>
                         </div>
                     </div>
