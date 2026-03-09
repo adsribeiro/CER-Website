@@ -91,8 +91,8 @@
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <div
-                        class="w-10 h-10 bg-white text-stone-900 flex items-center justify-center rounded-sm transition-transform hover:scale-105 duration-300">
-                        <i class="ph-bold ph-strategy text-xl"></i>
+                        class="w-10 h-10 flex items-center justify-center rounded-sm transition-transform hover:scale-105 duration-300">
+                        <img src="assets/icons/icon-logo.svg" alt="CER Logo" class="w-full h-full object-contain">
                     </div>
                     <span class="font-display font-medium tracking-tight text-xl text-white">
                         CER<span class="text-stone-400">.</span>
@@ -115,21 +115,21 @@
 
             <!-- Hero Main Structure -->
             <main
-                class="relative z-10 grid grid-cols-1 md:grid-cols-12 max-w-[1440px] mx-auto h-full px-6 md:px-12 pt-20 md:pt-24 pb-6 md:pb-12 items-center content-center gap-y-4 md:gap-y-0">
+                class="relative z-10 grid grid-cols-1 md:grid-cols-12 max-w-[1440px] mx-auto h-full px-6 md:px-12 pt-24 md:pt-24 pb-4 md:pb-12 items-center content-start md:content-center gap-y-3 md:gap-y-0">
 
                 <!-- Left Column: Typography -->
-                <div class="col-span-12 md:col-span-7 flex flex-col justify-center">
+                <div class="col-span-12 md:col-span-7 flex flex-col justify-center mt-2 md:mt-0">
 
-                    <div class="inline-flex items-center gap-2 mb-4 md:mb-8 gsap-stagger">
+                    <div class="inline-flex items-center gap-2 mb-2 md:mb-8 gsap-stagger">
                         <span
                             class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.7)]"></span>
-                        <span class="text-[10px] md:text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Soluções
+                        <span class="text-[9px] md:text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">Soluções
                             Next-Gen</span>
                     </div>
 
                     <!-- Impactful Lettering (H1) -->
                     <h1
-                        class="font-display text-4xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-4 md:mb-8 text-white gsap-stagger text-balance">
+                        class="font-display text-[1.85rem] leading-tight md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter md:leading-[1.05] mb-2 md:mb-8 text-white gsap-stagger text-balance">
                         Eleve a sua <br>
                         <span class="text-stone-400">Inteligência</span> <br>
                         de Negócios
@@ -137,16 +137,16 @@
 
                     <!-- Short Description -->
                     <p
-                        class="text-sm md:text-xl font-sans font-light text-stone-300 max-w-xl mb-6 md:mb-12 leading-relaxed gsap-stagger">
+                        class="text-[12px] md:text-xl font-sans font-light text-stone-300 max-w-xl mb-4 md:mb-12 leading-relaxed gsap-stagger">
                         Unimos consultoria estratégica com tecnologia de ponta para arquitetar crescimento escalável,
                         excelência operacional e transformação digital duradoura.
                     </p>
 
                     <!-- Buttons Container -->
-                    <div class="flex flex-wrap items-center gap-3 md:gap-4 gsap-stagger">
+                    <div class="flex flex-wrap items-center gap-2 md:gap-4 gsap-stagger">
                         <!-- Primary Solid CTA -->
                         <a href="#contato"
-                            class="group relative px-6 md:px-8 py-3 md:py-4 bg-white text-stone-900 overflow-hidden rounded-sm transition-all hover:shadow-xl hover:-translate-y-1 inline-flex cursor-pointer">
+                            class="group relative px-5 md:px-8 py-3 md:py-4 bg-white text-stone-900 overflow-hidden rounded-sm transition-all hover:shadow-xl hover:-translate-y-1 inline-flex cursor-pointer">
                             <div
                                 class="absolute inset-0 w-full h-full bg-stone-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                             </div>
@@ -154,60 +154,58 @@
                                 class="relative z-10 font-mono text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">
                                 Iniciar Consultoria
                                 <i
-                                    class="ph ph-arrow-right text-base group-hover:translate-x-1 transition-transform"></i>
+                                    class="ph ph-arrow-right text-sm md:text-base group-hover:translate-x-1 transition-transform"></i>
                             </span>
                         </a>
 
                         <!-- Secondary Ghost CTA -->
                         <a href="#metodologia"
-                            class="px-6 md:px-8 py-3 md:py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 rounded-sm text-white font-mono text-[10px] md:text-xs uppercase tracking-widest transition-all hover:-translate-y-1 inline-flex items-center gap-2 shadow-sm hover:shadow-md backdrop-blur-sm cursor-pointer">
+                            class="px-5 md:px-8 py-3 md:py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 rounded-sm text-white font-mono text-[10px] md:text-xs uppercase tracking-widest transition-all hover:-translate-y-1 inline-flex items-center gap-2 shadow-sm hover:shadow-md backdrop-blur-sm cursor-pointer">
                             Ver Metodologia
                         </a>
                     </div>
                 </div>
 
                 <!-- Right Column: Glassmorphism Modular Card -->
-                <div class="col-span-12 md:col-span-5 flex items-center justify-end">
+                <div class="col-span-12 md:col-span-5 flex items-start md:items-center justify-end">
                     <!-- Updated glass-card for Dark Mode -->
                     <div
-                        class="p-6 md:p-10 rounded-2xl w-full max-w-md group hover:-translate-y-2 transition-transform duration-500 gsap-stagger relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
+                        class="p-4 md:p-10 rounded-2xl w-full max-w-md md:max-w-none group hover:-translate-y-2 transition-transform duration-500 gsap-stagger relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
 
                         <!-- Iluminação suave interna (Dark mode variant) -->
                         <div
                             class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none">
                         </div>
 
-                        <div class="flex justify-between items-start mb-6 md:mb-10 relative z-10">
+                        <div class="flex justify-between items-start mb-3 md:mb-10 relative z-10">
                             <div
-                                class="w-10 h-10 md:w-14 md:h-14 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-sm flex items-center justify-center text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="ph ph-chart-line-up text-xl md:text-3xl"></i>
+                                class="w-8 h-8 md:w-14 md:h-14 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-sm flex items-center justify-center text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="ph ph-chart-line-up text-lg md:text-3xl"></i>
                             </div>
                             <span
-                                class="px-3 py-1 bg-white/10 text-stone-200 rounded-full text-[10px] font-mono uppercase tracking-widest border border-white/20 shadow-sm backdrop-blur-md">
+                                class="px-3 py-1 bg-white/10 text-stone-200 rounded-full text-[9px] md:text-[10px] font-mono uppercase tracking-widest border border-white/20 shadow-sm backdrop-blur-md">
                                 Métricas ao Vivo
                             </span>
                         </div>
 
-                        <h3 class="font-display text-2xl md:text-3xl font-medium tracking-tight text-white mb-2 relative z-10">
-                            Resultados e Performance</h3>
-                        <p class="text-[13px] md:text-sm font-sans text-stone-300 leading-relaxed mb-6 md:mb-10 relative z-10">
-                            Nossa arquitetura garante máxima eficiência e escalabilidade sistêmica em todas as unidades
-                            digitais.
+                        <h3 class="font-display text-lg md:text-3xl font-medium tracking-tight text-white mb-1 md:mb-2 relative z-10">
+                            Resultados <span class="hidden md:inline">e Performance</span></h3>
+                        <p class="text-[11px] md:text-sm font-sans text-stone-300 leading-relaxed mb-3 md:mb-10 relative z-10">
+                            Nossa arquitetura garante máxima eficiência e escalabilidade sistêmica.
                         </p>
 
                         <!-- Dynamic Metrics Container -->
-                        <div class="grid grid-cols-2 gap-4 relative z-10">
+                        <div class="grid grid-cols-2 gap-2 md:gap-4 relative z-10">
                             <div
-                                class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md">
-                                <span class="block text-4xl font-bold font-display text-white mb-1">3.2x</span>
-                                <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Aumento de
-                                    Receita</span>
+                                class="bg-white/5 backdrop-blur-md border border-white/10 p-2 md:p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md">
+                                <span class="block text-xl md:text-4xl font-bold font-display text-white mb-0 md:mb-1">3.2x</span>
+                                <span class="text-[8px] md:text-[10px] font-mono uppercase tracking-widest text-stone-400">Aumento</span>
                             </div>
                             <div
-                                class="bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md delay-75">
-                                <span class="block text-4xl font-bold font-display text-white mb-1">99%</span>
+                                class="bg-white/5 backdrop-blur-md border border-white/10 p-2 md:p-5 rounded-xl hover:bg-white/10 transition-colors duration-300 hover:shadow-md delay-75">
+                                <span class="block text-xl md:text-4xl font-bold font-display text-white mb-0 md:mb-1">99%</span>
                                 <span
-                                    class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Disponibilidade</span>
+                                    class="text-[8px] md:text-[10px] font-mono uppercase tracking-widest text-stone-400">Uptime</span>
                             </div>
                         </div>
                     </div>
@@ -217,7 +215,7 @@
 
             <!-- Scroll Indicator -->
             <div
-                class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse opacity-70 z-20">
+                class="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-pulse opacity-70 z-20">
                 <span class="text-[10px] font-mono uppercase tracking-widest text-stone-500">Role para Explorar</span>
                 <i class="ph ph-caret-down text-stone-500"></i>
             </div>
